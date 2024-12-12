@@ -28,6 +28,7 @@
 
 html {
     background-color: var(--background-color);
+    transition: background-color 0.7s;
 }
 body{
     background-color: var(--background-color);
