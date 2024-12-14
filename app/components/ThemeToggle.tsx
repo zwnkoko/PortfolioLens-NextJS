@@ -4,23 +4,37 @@ import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
 const ThemeToggle = () => {
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme, systemTheme } = useTheme();
   const [ mounted, setMounted ] = useState(false);
 
   useEffect(()=> {
     setMounted(true);
-  },[]);
+    console.log(theme);
+  },[]);  
 
   const toggleTheme = () => {
-    setTheme(theme === 'light' ? 'dark' : 'light')
-  }
+    if (theme === "system") {
+      const resolvedTheme = systemTheme === "dark" ? "light" : "dark";
+      setTheme(resolvedTheme);
+    } else {
+      setTheme(theme === "light" ? "dark" : "light");
+    }
+  };
+
+  const isDark = theme === 'dark' || (theme === 'system' && systemTheme === 'dark');
 
   if(!mounted) return null;
 
   return(
     /* Toggle Design from Uiverse.io by jubayer-10 */ 
     <label className="inline-flex items-center relative">
-      <input className="peer hidden" id="toggle" type="checkbox" onChange={toggleTheme} checked={theme === 'dark'}/>
+      <input
+        className="peer hidden" 
+        id="toggle" 
+        type="checkbox" 
+        onChange={toggleTheme} 
+        checked={isDark}
+      />
       <div
         className="relative w-[110px] h-[50px] bg-white peer-checked:bg-zinc-500 rounded-full after:absolute after:content-[''] after:w-[40px] after:h-[40px] after:bg-gradient-to-r from-orange-500 to-yellow-400 peer-checked:after:from-zinc-900 peer-checked:after:to-zinc-900 after:rounded-full after:top-[5px] after:left-[5px] active:after:w-[50px] peer-checked:after:left-[105px] peer-checked:after:translate-x-[-100%] shadow-sm duration-300 after:duration-300 after:shadow-md"
       ></div>
