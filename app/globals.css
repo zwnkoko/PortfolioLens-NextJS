@@ -13,17 +13,17 @@
     --color-secondary-hover: #4b4d4c;
     --color-secondary-active: #807e7e;
     
-    --color-tertiary-default: #6b7280;
-    --color-tertiary-hover: #4b5563;
-    --color-tertiary-active: #374151;
+    --color-tertiary-default: #D88B09;
+    --color-tertiary-hover: #d97706;
+    --color-tertiary-active: #b45309;
 }
   
 .dark {
     --background-color: #0a0f24;
 
-    --color-secondary-default: #D88B09;
-    --color-secondary-hover: #d97706;
-    --color-secondary-active: #b45309;
+    --color-secondary-default: #6b7280;
+    --color-secondary-hover: #4b5563;
+    --color-secondary-active: #374151;
 }
 
 html {
