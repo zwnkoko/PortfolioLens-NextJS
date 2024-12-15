@@ -38,7 +38,7 @@ const Button = ({ label, id, prefix, suffix, onClick, variant = "primary", anima
             id={id}
             onClick={handleClick}
         >
-            <div className="flex justify-around">
+            <div className="flex items-center justify-around space-x-2">
                 {prefix}
                 <p>{label}</p>
                 {suffix}
