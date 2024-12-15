@@ -14,7 +14,7 @@ interface ButtonProps extends GestureWrapperProps{
     href?: string,
   }
   
-const Button = ({ label, id, prefix, suffix, onClick, variant = "primary", animation, hoverScale, tapScale, href }: ButtonProps) => {
+const Button = ({ label, id, prefix, suffix, onClick, variant = "primary", animation=false, hoverScale, tapScale, href }: ButtonProps) => {
     const variantClasses = 
     {
         primary: "bg-primary hover:bg-primary-hover active:bg-primary-active",
@@ -27,7 +27,7 @@ const Button = ({ label, id, prefix, suffix, onClick, variant = "primary", anima
             // to be implemented
         }
         if(href){
-            // to be implemented
+            window.open(href, '_blank');
         }
     }
 
