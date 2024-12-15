@@ -28,6 +28,7 @@ export default {
           active: "var(--color-tertiary-active)",
         },
         
+        "theme-color": "var(--background-color)",
       },
       keyframes:{
         scroll:{
