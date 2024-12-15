@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-    --background-color: #ffffff;
+    --background-color: #FEFCFF;
 
     --color-primary-default: #134dcd;
     --color-primary-hover: #1043b1;
