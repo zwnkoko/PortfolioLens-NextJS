@@ -1,6 +1,6 @@
 import Button from "./components/Button";
 import Image from "next/image";
-
+import { EXTERNAL_LINKS } from "./constants";
 
 export default function Home() {
   return (
@@ -22,7 +22,8 @@ export default function Home() {
           label="Source code" 
           id="github-repo" 
           animation={true} 
-          variant="secondary"         
+          variant="secondary"
+          href={EXTERNAL_LINKS.github_repo_link}         
           prefix={
             <Image className="max-w-7 md:max-w-9" src={"/github-mark-white.png"} alt="github logo" width={240} height={240} layout="responsive"/>
           }
