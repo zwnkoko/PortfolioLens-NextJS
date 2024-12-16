@@ -28,16 +28,16 @@ const NavBar = () => {
     {/* Mobile and small view port hamburger nav bar*/}   
     <nav id="mobile-nav" className="font-semibold grid md:hidden size-full grid-cols-12">
 
-      <div className="col-span-3 flex items-center relative">
-        <Drawer />
+      <div className="col-span-3 flex items-center">
+        <ThemeToggle />
       </div>
 
       <p className="col-span-6 flex justify-center items-center">
         Portfolio Lens
       </p>
 
-      <div className="col-span-3 flex items-center justify-end">
-        <ThemeToggle />
+      <div className="col-span-3 flex items-center justify-end relative">
+        <Drawer />
       </div>
       
     </nav>
