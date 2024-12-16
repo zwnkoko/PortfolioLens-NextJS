@@ -21,12 +21,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={roboto.className} suppressHydrationWarning>
-      <body className="antialiased grid grid-rows-12 min-h-dvh md:max-w-7xl mx-auto px-global-x">
+      <body className="antialiased grid grid-rows-[auto_1fr_auto] min-h-dvh md:max-w-7xl mx-auto px-global-x py-4">
         <ThemeProvider attribute="class">
           <header>
             <NavBar />
           </header>
-          <main className="row-span-10">
+          <main>
             {children}
           </main>
           <footer className="flex items-center justify-center">
