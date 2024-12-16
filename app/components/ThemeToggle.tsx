@@ -9,7 +9,6 @@ const ThemeToggle = () => {
 
   useEffect(()=> {
     setMounted(true);
-    console.log(theme);
   },[]);  
 
   const toggleTheme = () => {
