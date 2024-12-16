@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={roboto.className} suppressHydrationWarning>
-      <body className="antialiased grid grid-rows-12 min-h-dvh md:max-w-7xl mx-auto px-6">
+      <body className="antialiased grid grid-rows-12 min-h-dvh md:max-w-7xl mx-auto px-global-x">
         <ThemeProvider attribute="class">
           <header>
             <NavBar />

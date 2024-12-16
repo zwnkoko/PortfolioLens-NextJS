@@ -26,9 +26,9 @@ const NavBar = () => {
     </nav>
 
     {/* Mobile and small view port hamburger nav bar*/}   
-    <nav className="font-semibold grid md:hidden size-full grid-cols-12">
+    <nav id="mobile-nav" className="font-semibold grid md:hidden size-full grid-cols-12">
 
-      <div className="col-span-3 flex items-center">
+      <div className="col-span-3 flex items-center relative">
         <Drawer />
       </div>
 

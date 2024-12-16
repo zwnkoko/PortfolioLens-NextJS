@@ -44,6 +44,15 @@ export default {
       },
       animation:{
         scroll: 'scroll 20s linear infinite 1s',
+      },
+      height: {
+        'dynamic-drawer': "calc(100dvh - var(--nav-height))",
+      },
+      width: {
+        'dynamic-drawer': "calc(100dvw - (2 * var(--global-padding-x)))",
+      },
+      padding: {
+        'global-x': "var(--global-padding-x)",
       }
     },
   },

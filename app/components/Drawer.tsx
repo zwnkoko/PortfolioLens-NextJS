@@ -1,11 +1,23 @@
 'use client'
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Link from "next/link";
 import { motion } from "motion/react";
 
 const Drawer = () => {
     const [ openDrawer, setOpenDrawer ] = useState(false);
+
+    // Calculate the height of mobile nav bar
+    useEffect(()=>{
+        const navBar = document.getElementById("mobile-nav")
+        if(navBar){
+            const navHeight = navBar.offsetHeight;
+            document.documentElement.style.setProperty('--nav-height', `${navHeight}px`);
+        }
+        else{
+            console.warn("mobile nav bar id is not set. Height calculation will be inaccurate")
+        }
+    },[]);
 
     const toggleDrawer = () =>{
         setOpenDrawer(!openDrawer);
@@ -21,19 +33,12 @@ const Drawer = () => {
         </div>
 
         {openDrawer && (
-            <motion.div className="fixed inset-0 px-6 bg-red-500"
-            initial={{ x: '-100%' }} // Start off-screen
-            animate={{ x: openDrawer ? 0 : '-100%' }}>
-                <div className="grid grid-rows-12 size-full items-center">
-                    <div>
-
-                    </div>
-                    <Link className="" href="/"> Home </Link>
-                    <Link href="/dashboard"> Dashboard </Link>
-                    <Link href="/about"> About </Link>
-                    <Link href="/contact"> Contact </Link>
-                </div>
-            </motion.div> 
+            <div className="absolute top-full bg-red-500 grid grid-rows-12 h-dynamic-drawer w-dynamic-drawer">
+                <Link className="" href="/"> Home </Link>
+                <Link href="/dashboard"> Dashboard </Link>
+                <Link href="/about"> About </Link>
+                <Link href="/contact"> Contact </Link>
+            </div> 
         )}
         </>
     )

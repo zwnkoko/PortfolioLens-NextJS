@@ -16,6 +16,8 @@
     --color-tertiary-default: #D88B09;
     --color-tertiary-hover: #d97706;
     --color-tertiary-active: #b45309;
+
+    --global-padding-x: 1.5rem;
 }
   
 .dark {
