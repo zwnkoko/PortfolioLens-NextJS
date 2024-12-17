@@ -3,14 +3,13 @@ import { ReactNode } from "react";
 
 export default function DashboardLayout({children, chart} : {children : ReactNode, chart : ReactNode}){
     return(
-        <div className="size-full flex flex-col">
-            <div className="basis-1/2 shrink-0">
+        <div className="bg-red-500 size-full flex flex-col">
+            <div className="min-h-96 bg-blue-500">
                 {chart}
-            </div>
-            <div className="grow">
+            </div>      
+            <div>
                 {children}
-            </div>
-            
+            </div>      
         </div>
     )
 }
