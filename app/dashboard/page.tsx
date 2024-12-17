@@ -1,5 +1,5 @@
 import Button from "../components/Button"
-import Image from "next/image";
+// import Image from "next/image";
 
 const holdings = {
     MU: 2, 
@@ -100,7 +100,7 @@ export default function Dashboard(){
             <p>abcd</p>
             <p>abcd</p>
             <p>abcd</p>
-            
+
 
 
 
