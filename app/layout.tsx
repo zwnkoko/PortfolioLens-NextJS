@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import NavBar from "./components/NavBar";
 
-const roboto = Roboto({
-  weight: ['100', '300', '400', '500', '700', '900'],
+const inter = Inter({
   subsets: ['latin'],
 })
 
@@ -20,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={roboto.className} suppressHydrationWarning>
+    <html lang="en" className={inter.className} suppressHydrationWarning>
       <body className="antialiased grid grid-rows-[auto_1fr_auto] min-h-dvh md:max-w-7xl mx-auto px-global-x py-4">
         <ThemeProvider attribute="class">
           <header className="pb-4">
