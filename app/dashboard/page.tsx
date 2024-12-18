@@ -1,4 +1,5 @@
 import Button from "../components/Button"
+import Image from "next/image";
 // import Image from "next/image";
 
 const holdings = {
@@ -27,112 +28,59 @@ const holdings = {
 export default function Dashboard(){
     return(
         <>
-            <div className="flex justify-between items-center">
-                <h1 className="text-base md:text-xl">
-                    My Positions ({Object.keys(holdings).length})
-                </h1>
-                <Button label="Add transaction" id="add-transaction" animation={true}/>
-            </div>
+        <div className="flex justify-between items-center">
+            <h1 className="text-base md:text-xl">
+                My Positions ({Object.keys(holdings).length})
+            </h1>
+            <Button label="Add transaction" id="add-transaction" animation={true}/>
+        </div>
 
-            <p>abcd</p>
-            <p>abcd</p>
-            <p>abcd</p>
-            <p>abcd</p>
-      
-            <p>abcd</p>
-            <p>abcd</p>
-            <p>abcd</p>
-            <p>abcd</p>
-            
-            <p>abcd</p>
-            <p>abcd</p>
-            <p>abcd</p>
-            <p>abcd</p>
-            
-            <p>abcd</p>
-            <p>abcd</p>
-            <p>abcd</p>
-            <p>abcd</p>
-            
-            <p>abcd</p>
-            <p>abcd</p>
-            <p>abcd</p>
-            <p>abcd</p>
-            <p>abcd</p>
-            <p>abcd</p>
-            <p>abcd</p>
-            <p>abcd</p>
-            
-            <p>abcd</p>
-            <p>abcd</p>
-            <p>abcd</p>
-            <p>abcd</p>
-            
-            <p>abcd</p>
-            <p>abcd</p>
-            <p>abcd</p>
-            <p>abcd</p>
-            <p>abcd</p>
-            <p>abcd</p>
-            <p>abcd</p>
-            <p>abcd</p>
-            
-            <p>abcd</p>
-            <p>abcd</p>
-            <p>abcd</p>
-            <p>abcd</p>
-            
-            <p>abcd</p>
-            <p>abcd</p>
-            <p>abcd</p>
-            <p>abcd</p>
-            <p>abcd</p>
-            <p>abcd</p>
-            <p>abcd</p>
-            <p>abcd</p>
-            
-            <p>abcd</p>
-            <p>abcd</p>
-            <p>abcd</p>
-            <p>abcd</p>
-            
-            <p>abcd</p>
-            <p>abcd</p>
-            <p>abcd</p>
-            <p>abcd</p>
-
-
-
-
-            {/* <Image
-                src="https://assets.parqet.com/logos/symbol/MSFT?format=jpg&size=300"
-                alt="Picture of the author"
-                width={32}
-                height={32}
-            />
-            <table className="size-full text-center">
-                <thead>
-                <tr>
-                    <th>Symbol</th>
-                    <th> Qty </th>
-                    <th> Market Value </th>
-                    <th> P/L </th>
-                    <th> Portfolio % </th>
-                </tr>
-                </thead>
-                <tbody>
-            {Object.entries(holdings).map(([symbol, quantity]) => (
-                <tr key={symbol}>
-                    <td> {symbol} </td>
-                    <td> {quantity} </td>
-                    <td> $1000 </td>
-                    <td> +23.4 </td>
-                    <td> 70% </td>
-                </tr>
+        <div>
+            {Object.entries(holdings).map(([symbol, qty]) => (
+                <div key={symbol} className="flex space-around">
+                    <div className="relative w-8 h-8 bg-transparent">
+                        <Image
+                            className="mix-blend-opacity-90"
+                            src={`https://assets.parqet.com/logos/symbol/${symbol}?format=png&size=300`}
+                            alt={symbol}
+                            fill
+                        />
+                    </div>
+                    <p>{symbol}</p>
+                    <p>{qty}</p>
+                </div>
             ))}
-            </tbody>
-            </table>
-            <a href="https://parqet.com/api">Logos provided by Parqet</a> */}
+            <a href="https://parqet.com/api" style={{fontSize:"12pt"}}>Logos provided by Parqet</a>
+        </div>
+        {/* <Image
+            src="https://assets.parqet.com/logos/symbol/MSFT?format=jpg&size=300"
+            alt="Picture of the author"
+            width={32}
+            height={32}
+        />
+        <table className="size-full text-center">
+            <thead>
+            <tr>
+                <th>Symbol</th>
+                <th> Qty </th>
+                <th> Market Value </th>
+                <th> P/L </th>
+                <th> Portfolio % </th>
+            </tr>
+            </thead>
+            <tbody>
+        {Object.entries(holdings).map(([symbol, quantity]) => (
+            <tr key={symbol}>
+                <td> {symbol} </td>
+                <td> {quantity} </td>
+                <td> $1000 </td>
+                <td> +23.4 </td>
+                <td> 70% </td>
+            </tr>
+        ))}
+        </tbody>
+        </table>
+        <a href="https://parqet.com/api">Logos provided by Parqet</a> */}
         </>
     )
 }

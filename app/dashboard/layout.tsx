@@ -1,11 +1,11 @@
 import { ReactNode } from "react";
+import LineChart from "./components/LineChart";
 
-
-export default function DashboardLayout({children, chart} : {children : ReactNode, chart : ReactNode}){
+export default function DashboardLayout({children} : {children : ReactNode}){
     return(
-        <div className="bg-red-500 size-full flex flex-col">
-            <div className="min-h-96 bg-blue-500">
-                {chart}
+        <div className="size-full flex flex-col space-y-4">
+            <div className="h-96">
+                <LineChart />
             </div>      
             <div>
                 {children}
