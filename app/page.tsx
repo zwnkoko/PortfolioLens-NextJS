@@ -25,7 +25,9 @@ export default function Home() {
           variant="secondary"
           href={EXTERNAL_LINKS.github_repo_link}         
           prefix={
-            <Image className="max-w-7 md:max-w-9" src={"/github-mark-white.png"} alt="github logo" width={240} height={240} layout="responsive"/>
+            <div className="relative w-8 h-8">
+              <Image src={"/github-mark-white.png"} alt="github logo" fill/>
+            </div>
           }
         />
         <Button 
