@@ -1,6 +1,5 @@
 import Button from "../components/Button"
 import Image from "next/image";
-// import Image from "next/image";
 
 const holdings = {
     MU: 2, 
@@ -36,17 +35,17 @@ export default function Dashboard(){
         </div>
 
         <div>
-            {Object.entries(holdings).map(([symbol, qty]) => (
-                <div key={symbol} className="flex space-around">
-                    <div className="relative w-8 h-8 bg-transparent">
+            {Object.entries(holdings).map(([ticker, qty]) => (
+                <div key={ticker} className="flex space-around items-center">
+                    <div className="relative w-8 h-8">
                         <Image
-                            className="mix-blend-opacity-90"
-                            src={`https://assets.parqet.com/logos/symbol/${symbol}?format=png&size=300`}
-                            alt={symbol}
+                            src={`/api/image?ticker=${ticker}`}
+                            alt={ticker}
                             fill
+                            sizes="32px"
                         />
                     </div>
-                    <p>{symbol}</p>
+                    <p>{ticker}</p>
                     <p>{qty}</p>
                 </div>
             ))}
