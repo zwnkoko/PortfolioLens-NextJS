@@ -6,9 +6,9 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'assets.parqet.com',
+        hostname: 'img.logo.dev',
         port: '',
-        pathname: '/logos/symbol/**',
+        pathname: '/ticker/**',
       }
     ]
   }
