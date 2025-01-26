@@ -22,24 +22,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={inter.className} suppressHydrationWarning>
-      <body className="antialiased grid grid-rows-[auto_1fr_auto] min-h-dvh md:max-w-7xl mx-auto px-global-x py-4">
+      <body className="antialiased grid grid-rows-[auto_1fr_auto] min-h-dvh px-6 md:px-0 md:max-w-7xl mx-auto py-4">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          <header className="">
-            <NavBar
-              title="Portfolio Lens"
-              links={[
-                { href: "/", label: "Home" },
-                { href: "/dashboard", label: "Dashboard" },
-                { href: "/about", label: "About" },
-              ]}
-            />
-          </header>
-          <main className="">{children}</main>
+          <NavBar
+            title="Portfolio Lens"
+            links={[
+              { href: "/", label: "Home" },
+              { href: "/dashboard", label: "Dashboard" },
+              { href: "/about", label: "About" },
+            ]}
+          />
+          <main>{children}</main>
           <footer className="flex flex-col items-center gap-4">
             <Footer />
           </footer>
