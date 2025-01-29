@@ -6,7 +6,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { Button } from "@/components/ui/button";
+import { AddTransaction } from "@/components/add-transaction";
 
 export default function Dashboard() {
   const holdings = [
@@ -28,8 +28,11 @@ export default function Dashboard() {
     },
   ];
   return (
-    <>
-      <Button>Add Stock</Button>
+    <div className="space-y-4">
+      <div className="flex justify-end items-center">
+        <AddTransaction />
+      </div>
+
       <Table>
         <TableHeader>
           <TableRow>
@@ -55,6 +58,6 @@ export default function Dashboard() {
           ))}
         </TableBody>
       </Table>
-    </>
+    </div>
   );
 }
