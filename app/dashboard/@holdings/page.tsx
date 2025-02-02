@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/table";
 import { AddTransaction } from "@/components/dashboard/add-transaction";
 
-export default function Dashboard() {
+export default function Holdings() {
   const holdings = [
     {
       symbol: "AAPL",
@@ -29,7 +29,7 @@ export default function Dashboard() {
   ];
   return (
     <div className="space-y-4">
-      <div className="flex justify-end items-center">
+      <div className="flex items-center justify-end">
         <AddTransaction />
       </div>
 

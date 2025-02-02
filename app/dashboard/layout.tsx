@@ -1,9 +1,18 @@
 import React from "react";
+import { Separator } from "@/components/ui/separator";
 
 export default function DashboardLayout({
-  children,
+  chart,
+  holdings,
 }: {
-  children: React.ReactNode;
+  chart: React.ReactNode;
+  holdings: React.ReactNode;
 }) {
-  return <>{children}</>;
+  return (
+    <div className="flex flex-col">
+      {chart}
+      <Separator className="my-4" />
+      {holdings}
+    </div>
+  );
 }
