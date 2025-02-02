@@ -1,6 +1,13 @@
 import Link from "next/link";
 import { ThemeToggle } from "./theme-toggle";
-import { Drawer, DrawerContent, DrawerTrigger } from "@/components/ui/drawer";
+import {
+  Drawer,
+  DrawerContent,
+  DrawerTrigger,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerDescription,
+} from "@/components/ui/drawer";
 import { Menu } from "lucide-react";
 
 interface NavLink {
@@ -62,6 +69,10 @@ function MobileNav({ links }: { links: NavLink[] }) {
         <Menu />
       </DrawerTrigger>
       <DrawerContent>
+        <DrawerHeader className="sr-only">
+          <DrawerTitle> Menu </DrawerTitle>
+          <DrawerDescription> Select an option to visit </DrawerDescription>
+        </DrawerHeader>
         <div className="flex flex-col space-y-3 p-4">
           {links.map((link) => (
             <Link

@@ -6,7 +6,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { AddTransaction } from "@/components/add-transaction";
+import { AddTransaction } from "@/components/dashboard/add-transaction";
 
 export default function Dashboard() {
   const holdings = [
