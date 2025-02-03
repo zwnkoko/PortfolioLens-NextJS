@@ -20,6 +20,14 @@ export default function Holdings() {
       PL: 20,
     },
     {
+      symbol: "QQQ",
+      qty: 3,
+      currentPrice: 400,
+      avgCost: 100,
+      todayPL: 10,
+      PL: 800,
+    },
+    {
       symbol: "MU",
       qty: 3,
       currentPrice: 400,
@@ -46,9 +54,11 @@ export default function Holdings() {
         <TableHeader>
           <TableRow>
             <TableHead>Symbol</TableHead>
+            <TableHead className="hidden md:table-cell">Qty</TableHead>
+            <TableHead className="hidden md:table-cell">Price/Share</TableHead>
             <TableHead>Avg Cost</TableHead>
-            <TableHead>Today P/L</TableHead>
             <TableHead>P/L</TableHead>
+            <TableHead className="text-right">Portfolio %</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -60,19 +70,25 @@ export default function Holdings() {
                   alt={holding.symbol}
                   width={40}
                   height={40}
-                  className="rounded-full"
+                  className="rounded-full bg-white"
                 />
 
-                <div>
+                <div className="flex flex-col justify-center">
                   <p>{holding.symbol}</p>
-                  <p>
+                  <p className="md:hidden">
                     {holding.qty} | {holding.currentPrice}
                   </p>
                 </div>
               </TableCell>
+              <TableCell className="hidden md:table-cell">
+                {holding.qty}
+              </TableCell>
+              <TableCell className="hidden md:table-cell">
+                {holding.currentPrice}
+              </TableCell>
               <TableCell>{holding.avgCost}</TableCell>
               <TableCell>{holding.todayPL}</TableCell>
-              <TableCell>{holding.PL}</TableCell>
+              <TableCell className="text-right">{holding.PL}</TableCell>
             </TableRow>
           ))}
         </TableBody>
