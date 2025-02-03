@@ -7,6 +7,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { AddTransaction } from "@/components/dashboard/add-transaction";
+import Image from "next/image";
 
 export default function Holdings() {
   const holdings = [
@@ -20,6 +21,14 @@ export default function Holdings() {
     },
     {
       symbol: "MU",
+      qty: 3,
+      currentPrice: 400,
+      avgCost: 100,
+      todayPL: 10,
+      PL: 800,
+    },
+    {
+      symbol: "NVDA",
       qty: 3,
       currentPrice: 400,
       avgCost: 100,
@@ -45,11 +54,21 @@ export default function Holdings() {
         <TableBody>
           {holdings.map((holding) => (
             <TableRow key={holding.symbol}>
-              <TableCell className="flex flex-col">
-                <p>{holding.symbol}</p>
-                <p>
-                  {holding.qty} | {holding.currentPrice}
-                </p>
+              <TableCell className="flex space-x-2">
+                <Image
+                  src={`/api/image?ticker=${holding.symbol}`}
+                  alt={holding.symbol}
+                  width={40}
+                  height={40}
+                  className="rounded-full"
+                />
+
+                <div>
+                  <p>{holding.symbol}</p>
+                  <p>
+                    {holding.qty} | {holding.currentPrice}
+                  </p>
+                </div>
               </TableCell>
               <TableCell>{holding.avgCost}</TableCell>
               <TableCell>{holding.todayPL}</TableCell>
