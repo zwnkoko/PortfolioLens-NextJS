@@ -3,7 +3,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Inter } from "next/font/google";
 import { EXTERNAL_LINKS } from "./constants";
-import { NavBar } from "@/components/ui/nav-bar";
+import { NavBar } from "@/components/ui/nav/nav-bar";
 
 const inter = Inter({
   subsets: ["latin"],
