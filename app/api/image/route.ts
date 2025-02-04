@@ -44,7 +44,7 @@ function handleError(error: unknown): NextResponse<APIError> {
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
   const ticker = searchParams.get("ticker");
-  const apiKey = process.env.IMAGE_PUBLIC_API_KEY;
+  const apiKey = process.env.NEXT_PUBLIC_LOGO_PUBLIC_KEY;
 
   if (!validateTicker(ticker)) {
     return NextResponse.json(
