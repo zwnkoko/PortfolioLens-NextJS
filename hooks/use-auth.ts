@@ -2,7 +2,12 @@
 
 import { useEffect, useState } from "react";
 import { auth, provider } from "@/lib/firebaseClient";
-import { User, signInWithPopup, onAuthStateChanged } from "firebase/auth";
+import {
+  User,
+  signInWithPopup,
+  onAuthStateChanged,
+  signOut as firebaseSignOut,
+} from "firebase/auth";
 import { useRouter } from "next/navigation";
 import { logDevError } from "@/lib/utils";
 
@@ -30,8 +35,17 @@ export function useAuth(redirectPath = "/dashboard") {
     }
   };
 
+  const signOut = async () => {
+    try {
+      await firebaseSignOut(auth);
+      router.push("/");
+    } catch (error) {
+      logDevError(error);
+    }
+  };
   return {
     user,
     signInWithGoogle,
+    signOut,
   };
 }
