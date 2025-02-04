@@ -10,13 +10,18 @@ import {
 } from "firebase/auth";
 import { useRouter } from "next/navigation";
 import { logDevError } from "@/lib/utils";
+import { usePathname } from "next/navigation";
 
-export function useAuth(redirectPath = "/dashboard") {
+export function useAuth() {
+  const pathName = usePathname();
+  const redirectPath = pathName === "/login" ? "/dashboard" : pathName;
   const [user, setUser] = useState<User | null>(null);
+  const [authenticating, setAuthenticating] = useState(true);
   const router = useRouter();
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setAuthenticating(false);
       setUser(user);
       if (user) {
         router.push(redirectPath);
@@ -38,13 +43,14 @@ export function useAuth(redirectPath = "/dashboard") {
   const signOut = async () => {
     try {
       await firebaseSignOut(auth);
-      router.push("/");
+      window.location.href = "/"; // reload to homepage to clear states
     } catch (error) {
       logDevError(error);
     }
   };
   return {
     user,
+    authenticating,
     signInWithGoogle,
     signOut,
   };
