@@ -1,7 +1,7 @@
 "use client";
 
 import { useAuth } from "@/hooks/use-auth";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/button/button";
 import Image from "next/image";
 import {
   Card,
