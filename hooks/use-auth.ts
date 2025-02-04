@@ -6,7 +6,7 @@ import { User, signInWithPopup, onAuthStateChanged } from "firebase/auth";
 import { useRouter } from "next/navigation";
 import { logDevError } from "@/lib/utils";
 
-export function useAuth() {
+export function useAuth(redirectPath = "/dashboard") {
   const [user, setUser] = useState<User | null>(null);
   const router = useRouter();
 
@@ -14,7 +14,7 @@ export function useAuth() {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       setUser(user);
       if (user) {
-        router.push("/dashboard");
+        router.push(redirectPath);
       }
     });
 
