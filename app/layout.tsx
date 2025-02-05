@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider";
+import { ThemeProvider } from "@/providers/theme-provider";
 import { Inter } from "next/font/google";
 import { EXTERNAL_LINKS } from "./constants";
 import { NavBar } from "@/components/ui/nav/nav-bar";
+import ReactQueryProvider from "../providers/react-query-provider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -29,22 +30,24 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="mx-2 grid min-h-dvh grid-rows-[auto_1fr_auto] md:mx-auto md:max-w-7xl">
-            <header className="pt-2">
-              <NavBar
-                title="Portfolio Lens"
-                links={[
-                  { href: "/", label: "Home" },
-                  { href: "/dashboard", label: "Dashboard" },
-                  { href: "/about", label: "About" },
-                ]}
-              />
-            </header>
-            <main>{children}</main>
-            <footer className="flex flex-col items-center gap-4 pb-2">
-              <Footer />
-            </footer>
-          </div>
+          <ReactQueryProvider>
+            <div className="mx-2 grid min-h-dvh grid-rows-[auto_1fr_auto] md:mx-auto md:max-w-7xl">
+              <header className="pt-2">
+                <NavBar
+                  title="Portfolio Lens"
+                  links={[
+                    { href: "/", label: "Home" },
+                    { href: "/dashboard", label: "Dashboard" },
+                    { href: "/about", label: "About" },
+                  ]}
+                />
+              </header>
+              <main>{children}</main>
+              <footer className="flex flex-col items-center gap-4 pb-2">
+                <Footer />
+              </footer>
+            </div>
+          </ReactQueryProvider>
         </ThemeProvider>
       </body>
     </html>
