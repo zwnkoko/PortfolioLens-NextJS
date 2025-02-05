@@ -20,15 +20,21 @@ interface Holding {
 }
 
 export default function Holdings() {
-  const { user } = useAuth();
+  const { user, authenticating } = useAuth();
   const { data, isLoading } = useHoldingData(user?.uid);
 
+  // if data is loading
   if (isLoading) {
     return <div>Loading...</div>;
   }
 
-  if (!data) {
+  // if authentication is over and no data is found
+  if (!data && !authenticating) {
     return <div>No data found</div>;
+  }
+
+  if (!data) {
+    return;
   }
 
   return (
