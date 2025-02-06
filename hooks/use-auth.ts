@@ -53,8 +53,12 @@ export function useAuth() {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (sessionStorage.getItem("isDemoUser")) {
+        setUser(DEMO_USER);
+      } else {
+        setUser(user);
+      }
       setAuthenticating(false);
-      setUser(user);
       if (user) {
         router.push(redirectPath);
       }
@@ -73,9 +77,10 @@ export function useAuth() {
   };
 
   const signInWithDemo = () => {
-    setUser(DEMO_USER);
+    sessionStorage.setItem("isDemoUser", "true");
     router.push(redirectPath);
   };
+
   const signOut = async () => {
     try {
       await firebaseSignOut(auth);
