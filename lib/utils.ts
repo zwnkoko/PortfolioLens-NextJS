@@ -5,7 +5,7 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export const logDevError = (
+export const logDev = (
   message: unknown,
   type: "log" | "error" | "warn" | "info" = "log",
 ) => {
