@@ -55,7 +55,7 @@ export default function Holdings() {
     return (
       <div className="flex h-full flex-col items-center justify-center space-y-6 px-4 text-center">
         <h3 className="scroll-m-20 text-xl font-semibold tracking-tight sm:text-2xl">
-          Hey there, looks like you haven't logged in yet! 👋
+          Hey there, looks like you haven&apos;t logged in yet! 👋
         </h3>
         <p className="max-w-md text-sm leading-7 sm:text-base">
           No worries—jump into our{" "}
