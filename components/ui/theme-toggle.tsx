@@ -8,8 +8,6 @@ import { useEffect, useState } from "react";
 export function ThemeToggle() {
   const { theme, setTheme, systemTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
-  const isDark =
-    theme === "dark" || (theme === "system" && systemTheme === "dark");
 
   useEffect(() => {
     setMounted(true);
