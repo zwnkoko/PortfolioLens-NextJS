@@ -58,7 +58,7 @@ export default function Holdings() {
           Hey there, looks like you haven&apos;t logged in yet! 👋
         </h3>
         <p className="max-w-md text-sm leading-7 sm:text-base">
-          No worries—jump into our{" "}
+          No worries—jump into{" "}
           <span className="inline-block animate-pulse rounded-md border border-primary/20 bg-primary/10 px-2 py-1 font-bold text-primary shadow-sm shadow-primary/20">
             Demo Mode
           </span>{" "}
